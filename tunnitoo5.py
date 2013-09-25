@@ -28,19 +28,18 @@ from random import randint
 # print klass
 
 
-kuulid = ["s"]*5 + ["m"]*5 + ["v"]*5
+kuulid = ["s"]*3 + ["m"]*5 + ["v"]*3
 # print kuulid
 min=0
-max=len(kuulid)-1
+max= len(kuulid)-1
 kuul1 = randint (min,max)
 del kuulid[kuul1]
 print kuulid
 
+kuul2= randint (min,max)-1
+del kuulid[kuul2]
+print kuulid
+
 kuul2 = randint (min, max)
 del kuulid[kuul2]
-
-
-
-
-
-
+print kuulid
