@@ -4,11 +4,11 @@ klass= ["Art", "Janis", "Egert", "Kerto", "Eveli", "Jasper", "Mario", "Kairo", "
 
 for i in xrange(100):
 
-n= randint (0,len(klass)-1)
+	n= randint (0, len(klass)-1)
 
-element= klass[n]
-del klass[n]
+	element= klass[n]
+	del klass[n]
 
-klass= klass+[element]
+	klass= klass+[element]
 
-print klass
+	print klass
