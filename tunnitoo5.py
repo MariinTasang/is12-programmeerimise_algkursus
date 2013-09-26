@@ -29,17 +29,16 @@ from random import randint
 
 
 kuulid = ["s"]*3 + ["m"]*5 + ["v"]*3
-# print kuulid
 min=0
 max= len(kuulid)-1
-kuul1 = randint (min,max)
-del kuulid[kuul1]
-print kuulid
+n = randint (min,max)
+kuul1= kuulid[n]
+print kuul1
+del kuulid[n]
 
-kuul2= randint (min,max)-1
-del kuulid[kuul2]
-print kuulid
-
-kuul2 = randint (min, max)
-del kuulid[kuul2]
-print kuulid
+min=0
+max= len(kuulid)-1
+n = randint (min,max)
+kuul2= kuulid[n]
+print kuul2
+del kuulid[n]
