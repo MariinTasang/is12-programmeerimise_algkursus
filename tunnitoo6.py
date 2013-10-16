@@ -29,3 +29,17 @@ for i in xrange (100):
 # print kuulid
 
 print 100*erinevad/korrad
+
+if 1+1 ==2:
+	print "true"
+	
+	
+nimi= "Aigar"
+if nimi == "Timo":
+	print "False"
+	
+
+kuul1="s"
+kuul2="m"
+if kuul1!=kuul2:
+	print "erinevad"
