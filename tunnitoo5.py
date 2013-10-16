@@ -42,3 +42,4 @@ n = randint (min,max)
 kuul2= kuulid[n]
 print kuul2
 del kuulid[n]
+
