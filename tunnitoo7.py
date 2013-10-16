@@ -25,9 +25,11 @@ for element in massiiv:
 		break
 print "valmis"
 
-x=0.0
-while x<0.8:
-	print "x=" +str(x)
-	x=x+0.1
-print "x=" +str(x)
+x=0
+while x<9:
+	x=x+1
+	x=str(x)
+	print ((x).zfill(2))
+	x=int(x)
+
 	
