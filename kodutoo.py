@@ -66,4 +66,3 @@ print float.fromhex ('0x3.a7p10')
 print float.hex (3740.0)
 # 0x1.d380000000000p+11
 
-
