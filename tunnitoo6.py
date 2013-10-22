@@ -43,3 +43,4 @@ kuul1="s"
 kuul2="m"
 if kuul1!=kuul2:
 	print "erinevad"
+
