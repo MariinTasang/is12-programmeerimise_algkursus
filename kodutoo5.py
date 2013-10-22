@@ -12,3 +12,4 @@ for i in xrange(100):
 	klass= klass+[element]
 
 	print klass
+
