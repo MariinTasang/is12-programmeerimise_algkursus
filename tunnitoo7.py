@@ -32,4 +32,3 @@ while x<9:
 	print ((x).zfill(2))
 	x=int(x)
 
-	
