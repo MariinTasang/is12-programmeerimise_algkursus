@@ -17,9 +17,6 @@ if any(x.isupper()for x in tekst)and any(x.islower()for x in tekst) and any(x.is
 elif any(x.isupper()for x in tekst)and any(x.islower()for x in tekst) and any(x.isdigit() for x in tekst)==False:
 	print "molemad ja numbriteta"
 
-else: 
-	print " "
-
 # teine ylessanne
 
 from math import *
