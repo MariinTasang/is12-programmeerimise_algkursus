@@ -21,3 +21,12 @@ else:
 	print " "
 
 # teine ylessanne
+
+from math import *
+
+arv1 = raw_input("Siia kirjuta esimene arv: ")
+arv2 = raw_input("Siia kirjuta teine arv: ")
+
+arv1 = int(arv1)
+arv2 = int(arv2)
+
