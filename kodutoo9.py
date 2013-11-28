@@ -29,7 +29,7 @@ arv2 = int(arv2)
 
 tulemus = 0
 while arv1<= arv2:
-	arv1 = arv1+1
 	if arv1 % 3 == 0:
 		tulemus = tulemus +1
+	arv1 = arv1+1
 print tulemus
