@@ -20,7 +20,7 @@ print ""
 
 """
 funktsioon mis valjastab ekraanile
-kasti servad.
+kasti 4 nurka.
 Funktsiooni parameetrid x, y, w, h
 """
 
