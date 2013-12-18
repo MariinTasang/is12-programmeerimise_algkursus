@@ -2,8 +2,11 @@ import sys
 import time
 
 def kursor(x, y, tekst):
-	sys.stdout.write( "\033 [" +str(y)+";"+str(x)+"H"+tekst
-sys.stdout.write ("\033[2J")
+	
+
+	sys.stdout.write( "\033["+str(y) + ";" +str(x) + "H" + tekst)
+
+sys.stdout.write( "\033[2J")
 
 def kast(x, y, w, h):
 	n = 1
