@@ -24,9 +24,7 @@ kast (5, 5, 5, 5)
 sys.stdout.flush()
 time.sleep(30)
 
-"""
-1 kursor - ylemine kylg ja ylemine vasak nurk
-2 kursor - parem kylg ja ylemine parem nurk
-3 kursor - valumine kylg ja alumine vasak nurk
-4 kursor - .... ja alumine parem nurk
-"""
+# esimene kursor prindib ylemise kylje
+# teine kursor prindib alumise kylje
+# kolmas kursor prindib vasaku kylje
+# nelja kursor prindib parem kylje
