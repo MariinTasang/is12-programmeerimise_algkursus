@@ -9,7 +9,7 @@ def kast(x, y, w, h):
 	n = 1
 	m = 1
 	
-	while x <= h:
+	while m <= h:
 		kursor(x+m, y, "#")
 		kursor(x+w, y+m, "#")
 		m = m +1
