@@ -76,3 +76,4 @@ End()
 print "Edasine tegevus:"
 for element in valik:
 	print element
+	
