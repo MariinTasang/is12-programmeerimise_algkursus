@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 print ""
@@ -55,7 +56,6 @@ def Eemalda():
 			print element
 Eemalda()
 
-
 def Lisa():
 	if Valik == "add":
 		Lisa = ([raw_input("Eesnimi: "), raw_input("Perenimi: "), raw_input("Kursus: ")])
@@ -73,8 +73,8 @@ def End():
 		print exit()
 End()
 
+print ""
 
 print "Edasine tegevus:"
 for element in valik:
 	print element
-	
