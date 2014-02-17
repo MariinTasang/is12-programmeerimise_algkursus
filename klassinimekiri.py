@@ -55,9 +55,10 @@ def Eemalda():
 			print element
 Eemalda()
 
+
 def Lisa():
 	if Valik == "add":
-		Lisa = raw_input("Eesnimi, Perenimi, Kursus: ")
+		Lisa = ([raw_input("Eesnimi: "), raw_input("Perenimi: "), raw_input("Kursus: ")])
 		kuskirje = klassinimekiri.append(Lisa)
 		
 		print ""
