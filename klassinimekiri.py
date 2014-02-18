@@ -30,51 +30,61 @@ for element in valik:
 	print element
 	
 print ""
+
+while True:
 	
-Valik = raw_input("Tegevuse valik: ")
+	Valik = raw_input("Tegevuse valik: ")
 
-print ""
+	print ""
 
-def Kuva():
-	if Valik == "ls":
-		print "Klassinimekiri:"
-		
-		print ""
-		
-		for element in klassinimekiri:
-			print element
-Kuva()
+	def Kuva():
+		if Valik == "ls":
+			print "Klassinimekiri:"
+			
+			print ""
+			
+			for element in klassinimekiri:
+				print element
+	Kuva()
 
-def Eemalda():
-	if Valik == "rm":
-		Eemalda = int(raw_input("Mitmes elenent: "))
-		kustuta = klassinimekiri.pop (Eemalda)
-		
-		print ""
-		
-		for element in klassinimekiri:
-			print element
-Eemalda()
+	def Eemalda():
+		if Valik == "rm":
+			Eemalda = int(raw_input("Mitmes elenent: "))
+			kustuta = klassinimekiri.pop (Eemalda)
+			
+			print ""
+			
+			for element in klassinimekiri:
+				print element
+	Eemalda()
 
-def Lisa():
-	if Valik == "add":
-		Lisa = ([raw_input("Eesnimi: "), raw_input("Perenimi: "), raw_input("Kursus: ")])
-		kuskirje = klassinimekiri.append(Lisa)
-		
-		print ""
-		
-		for element in klassinimekiri:
-			print element
-Lisa()
- 
-def End(): 
-	if Valik == "q":
-		print "Head aega"	
-		print exit()
-End()
+	def Lisa():
+		if Valik == "add":
+			Lisa = ([raw_input("Eesnimi: "), raw_input("Perenimi: "), raw_input("Kursus: ")])
+			kuskirje = klassinimekiri.append(Lisa)
+			
+			print ""
+			
+			for element in klassinimekiri:
+				print element
+	Lisa()
+	 
+	def End(): 
+		if Valik == "q":
+			print "Head aega"	
+			print exit()
+	End()
 
-print ""
+	print ""
 
-print "Edasine tegevus:"
-for element in valik:
-	print element
+
+
+			
+	
+
+
+
+
+
+
+
