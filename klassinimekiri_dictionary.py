@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-print ""
-
 klassinimekiri = {0: {"eesnimi": "Mariin", "perenimi": "Tasang", "kursus": "IS12"}}
 
 print "Klassinimekiri_alg: "
