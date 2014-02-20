@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-klassinimekiri = {0: {"eesnimi": "Mariin", "perenimi": "Tasang", "kursus": "IS12"}}
+print ""
+
+klassinimekiri = {0: {"Eesnimi": "Mariin", 
+		      "Perenimi": "Tasang", 
+		      "Kursus": "IS12"}}
 
 print "Klassinimekiri_alg: "
 print klassinimekiri
@@ -37,13 +41,13 @@ while True:
 			voti = raw_input("Kas - eesnimi perenimi kursus: ")
 			vaartus = raw_input("Uus vaartus: ")
 			
-			klassinimekiri[kirje][voti.lower()] = vaartus
+			klassinimekiri[kirje][voti] = vaartus
 
 	Muuda()
 
 	def Eemalda():
 		if Valik == "rm":
-			kirje = int(raw_input("NUMBER: "))
+			kirje = int(raw_input("Rea_number: "))
 			del klassinimekiri [kirje]
 			
 		print ""
@@ -61,7 +65,7 @@ while True:
 			else:
 				sissekanne = 0
 
-			klassinimekiri[sissekanne] = {'eesnimi': eesnimi, 'perenimi':perenimi, 'kursus': kursus}
+			klassinimekiri[sissekanne] = {'Eesnimi': eesnimi, 'Perenimi':perenimi, 'Kursus': kursus}
 			
 	Lisa()
 	 
@@ -72,14 +76,3 @@ while True:
 	End()
 
 	print ""
-
-
-			
-	
-
-
-
-
-
-
-
