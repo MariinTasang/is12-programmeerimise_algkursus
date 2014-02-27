@@ -17,8 +17,8 @@ class Postipakk:
 		print "Status on " + self.status
 		
 obj1 = Postipakk()
-print obj1.status_print()
+obj1.status_print()
 
 obj2 = Postipakk()
 obj2.kohal()
-print obj2.status_print()
+obj2.status_print()
