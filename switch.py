@@ -24,16 +24,46 @@ class And:
 		self.inputs.append(x)
 		
 	def state_get(self):
+		if len(self.inputs)==0:
+			return False
 		for i in self.inputs:
-			if i == False:
-				print "False"
-			else:
-				print "True"
-		return self.inputs
+			if i.state_get() == False:
+				return False
+			
+		return True
 		
-obj1 = Switch(True)
-print obj1.state_get()
+		
+class Or:
+	
+	def __init__(self):
+		self.inputs = []	
+	
+	def input_add(self, x):
+		self.inputs.append(x)
+		
+	def state_get(self):
+		if len(self.inputs)==0:
+			return False
+		for i in self.inputs:
+			if i.state_get() == True:
+				return True
+			
+		return False
 
-obj2 = And()
-obj2.input_add(True)
-print obj2.state_get()
+class Not:
+	def __init__(self, obj):
+		self.input = obj
+		
+	def state_get(self):	
+		return not self.input.state_get()
+		
+sw1 = Switch(True)
+sw2 = Switch(False)
+#print obj1.state_get()
+
+obj2 = Or()
+obj2.input_add(sw1)
+obj2.input_add(sw2)
+
+obj3 = Not(sw2)
+print obj3.state_get()
