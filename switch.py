@@ -17,8 +17,8 @@ class Switch:
 	
 class And:
 	
-	def __init__(self):
-		self.inputs = []	
+	def __init__(self, inputs):
+		self.inputs = inputs
 	
 	def input_add(self, x):
 		self.inputs.append(x)
@@ -35,8 +35,8 @@ class And:
 		
 class Or:
 	
-	def __init__(self):
-		self.inputs = []	
+	def __init__(self, inputs):
+		self.inputs = inputs
 	
 	def input_add(self, x):
 		self.inputs.append(x)
@@ -57,13 +57,23 @@ class Not:
 	def state_get(self):	
 		return not self.input.state_get()
 		
-sw1 = Switch(True)
+sw1 = Switch(False)
 sw2 = Switch(False)
-#print obj1.state_get()
+sw4 = Switch(True)
+sw3 = Switch(False)
 
-obj2 = Or()
-obj2.input_add(sw1)
-obj2.input_add(sw2)
+not1 = Not(sw4)
+not2 = Not(sw3)
+not3 = Not(sw2)
+not4 = Not(sw1)
+not5 = Not(sw3)
+not6 = Not(sw4)
 
-obj3 = Not(sw2)
-print obj3.state_get()
+and1 = And([sw2, not1])
+and2 = And([sw1, sw3])
+and3 = And([sw2, not2])
+and4 = And([not3, sw3, sw4])
+and5 = And([not4, not5, not6])
+
+or1 = Or([and1, and2, and3, and4, and5])
+print or1.state_get()
