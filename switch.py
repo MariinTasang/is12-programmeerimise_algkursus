@@ -77,3 +77,4 @@ and5 = And([not4, not5, not6])
 
 or1 = Or([and1, and2, and3, and4, and5])
 print or1.state_get()
+
