@@ -6,10 +6,8 @@ kontaktid_maxid = 1
 
 class Kontakt:
 	
-	#def __init__(self):
-		#self.id = "1"
-		#self.nr= raw_input("Telefoni number: ") 
-		#self.omanik = raw_input("Inimese ID: ")
+	def __init__(self):
+		self.id = 0
 	
 	def save(self):
 		if self.id == 0:
