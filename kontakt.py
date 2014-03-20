@@ -1,34 +1,52 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+kontaktid = {}
+
 class Kontakt:
 	
-	def __init__(self):
-		self.telefoni_id = "1"
-		self.telefoni_nr= raw_input("Telefoni number: ") 
-		self.omanik = raw_input("Inimese ID: ")
+	#def __init__(self):
+		#self.id = "1"
+		#self.nr= raw_input("Telefoni number: ") 
+		#self.omanik = raw_input("Inimese ID: ")
+	
+	def save(self):
+		if self.id == 0:
+			self.id =
+		voti = self.id
+		vaartus = {"number": self.nr, "omanik": self.omanik}
+		kontaktid[voti] = vaartus
 		
 	def id_get(self):
-		return self.telefoni_id
+		return self.id
 		
 	def number_get(self):
-		return self.telefoni_nr
+		return self.nr
 	
 	def omanik_get(self):
 		return self.omanik
 		
+	def number_set(self, number):
+		self.nr = number
+	
+	def omanik_set(self, omanik):
+		self.omanik = omanik
+		
 
 class Inimene:
 	
-	def __init__(self):
-		self.inimese_id = "1"
-		self.inimese_nimi = raw_input("Inimese nimi: ")
+	#def __init__(self):
+		#self.id = "1"
+		#self.nimi = raw_input("Inimese nimi: ")
 		
 	def id_get(self):
-		return self.inimese_id
+		return self.id
 		
-	def name_get(self):
-		return self.inimese_nimi
+	def nimi_get(self):
+		return self.nimi
+		
+	def nimi_set(self, nimi):
+		self.nimi = name
 	
 		
 obj1 = Kontakt()
