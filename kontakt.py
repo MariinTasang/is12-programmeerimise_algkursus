@@ -13,7 +13,8 @@ class Kontakt:
 	
 	def save(self):
 		if self.id == 0:
-			self.id = kontaktid_maxid
+			self.id = kontaktid_maxid 
+			kontaktid_maxid = kontaktid_maxid +1
 		voti = self.id
 		vaartus = {"number": self.nr, "omanik": self.omanik}
 		kontaktid[voti] = vaartus
