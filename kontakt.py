@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 kontaktid = {}
+kontaktid_maxid = 1
 
 class Kontakt:
 	
@@ -12,7 +13,7 @@ class Kontakt:
 	
 	def save(self):
 		if self.id == 0:
-			self.id =
+			self.id = kontaktid_maxid
 		voti = self.id
 		vaartus = {"number": self.nr, "omanik": self.omanik}
 		kontaktid[voti] = vaartus
