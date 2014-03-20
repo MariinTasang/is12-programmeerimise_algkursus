@@ -10,6 +10,8 @@ class Kontakt:
 		self.id = 0
 		
 	def save(self):
+		global kontaktid_maxid
+		global kontaktid
 		if self.id == 0:
 			self.id = kontaktid_maxid 
 			kontaktid_maxid = kontaktid_maxid +1
@@ -57,7 +59,7 @@ obj1.save()
 
 obj2 = Kontakt()
 obj2.number_set("345454112")
-obj3.omanik_set(6)
+obj2.omanik_set(6)
 
 obj2.save()
 
