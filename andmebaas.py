@@ -4,6 +4,8 @@
 import sys
 import shelve
 
+andmebaas = shelve.open(kontaktid.db)
+
 kontaktid = {}
 kontaktid_maxid = 1
 
