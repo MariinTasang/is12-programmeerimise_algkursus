@@ -4,8 +4,6 @@
 import sys
 import shelve
 
-andmebaas = shelve.open(kontaktid.db)
-
 kontaktid = {}
 kontaktid_maxid = 1
 
@@ -52,7 +50,7 @@ class Kontakt:
 			
 		self.id = id
 		self.nr = kontaktid[id]["number"]
-		self.omanik = kontaktid[id]["omanik"]		
+		self.omanik = kontaktid[id]["omanik"]	
 			
 class Inimene:
 	
@@ -88,26 +86,39 @@ class Inimene:
 		
 		self.id = id
 		self.nimi = inimesed[id]["nimi"]
-	
-i1 =Inimene()
-i1.nimi_set("Aulis")
-i1.save()
 		
-k1 = Kontakt()
-k1.number_set("34546462")
-k1.omanik_set(i1.id_get())
-k1.save()
 
-k2 = Kontakt()
-k2.number_set("45567531")
-k2.omanik_set(i1.id_get())
-k2.save()
+while True:
+	valik = raw_input("Valige i või k: ")
 
-print inimesed
-print kontaktid
+	if valik == "i":
+		valik1 = raw_input("Valige, kas ls, add, del: ")
 
+		if valik1 == "ls":
+			print inimesed
+			
+		if valik1 =="add":
+			i1 = Inimene()
+			i1.nimi_set(raw_input("Nimi: "))
+			i1.save()
+			
+		if valik1 == "del":
+			pass	
+			
+			
+	elif valik == "k":
+		valik1 = raw_input("Valige, kas ls, add, del: ")
 
-
-
-
-
+		if valik1 == "ls":
+			print kontaktid
+			
+		if valik1 =="add":
+			k1 = Kontakt()
+			k1.number_set(raw_input("Number: "))
+			k1.omanik_set(raw_input("Omanik: "))
+			k1.save()
+			
+		if valik1 == "del":
+			pass
+	else: 
+		print exit()
