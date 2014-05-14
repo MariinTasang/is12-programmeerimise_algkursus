@@ -1,0 +1,169 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import sys
+import shelve
+from collections import OrderedDict
+
+kontaktid = shelve.open('kontaktid2')
+
+if not 'maxid' in kontaktid:
+	kontaktid['maxid'] = 1
+
+class Kontakt:
+	
+	def __init__(self):
+		self.id = 0
+		
+	def save(self):
+		global kontaktid
+		
+		if self.id == 0:
+			self.id = kontaktid['maxid']
+			kontaktid['maxid'] = kontaktid['maxid'] + 1
+						
+		voti = self.id
+		vaartus = {"number": self.nr, "omanik": self.omanik}
+		kontaktid[str(voti)] = vaartus
+		
+	def id_get(self):
+		return self.id
+		
+	def number_get(self):
+		return self.nr
+	
+	def omanik_get(self):
+		return self.omanik
+				
+	def number_set(self, number):
+		self.nr = number
+	
+	def omanik_set(self, omanik):
+		self.omanik = omanik
+		
+	def load(self, id):
+		if self.id != 0:		
+			print 'Load error 1'
+			sys.exit(1)
+		
+		if not str(id) in kontaktid:
+			print 'Load error 2'
+			sys.exit(1)
+			
+		self.id = id
+		self.nr = kontaktid[str(id)]['number']
+		self.omanik = kontaktid[str(id)]['omanik']
+
+	def remove(self):
+		del kontaktid[str(self.id)]
+		
+	def text(self):
+		print str(self.id) + " - Number: " + str(self.nr) + " Omanik: " + str(self.omanik)
+		
+inimesed = shelve.open('inimesed2')
+
+if not 'maxid' in inimesed:
+	inimesed['maxid'] = 1
+
+class Inimene:
+	
+	def __init__(self):
+		self.id = 0
+
+	def save(self):
+		global inimesed
+		
+		if self.id == 0:
+			self.id = inimesed['maxid']
+			inimesed['maxid'] = inimesed['maxid'] + 1
+		voti = self.id
+		vaartus = {"nimi": self.nimi}
+		inimesed[str(voti)] = vaartus
+		
+	def id_get(self):
+		return self.id
+	
+	def nimi_get(self):
+		return self.nimi
+		
+	def nimi_set(self, name):
+		self.nimi = name
+		
+	def load(self, id):
+		if self.id != 0:		
+			print 'Load error 1'
+			sys.exit(1)
+		
+		if not str(id) in inimesed:
+			print 'Load error 2'
+			sys.exit(1)
+			
+		self.id = id
+		self.nimi = inimesed[str(id)]['nimi']
+
+	def remove(self):
+		del inimesed[str(self.id)]	
+		
+	def text(self):
+		print self.id, self.nimi
+		
+		
+def printlist(x):
+	
+	if x == 'i':
+		i = 1
+		while i < len(inimesed):
+			print i,
+			print inimesed[str(i)]
+			
+			i += 1
+
+		print 
+	else:
+		y = 1
+		while y < len(kontaktid):
+			print y,
+			print kontaktid[str(y)]
+			
+			y += 1
+
+while True:
+	valik = raw_input("Valige i või k: ")
+
+	if valik == "i":
+		valik1 = raw_input("Valige, kas ls, add, del: ")
+
+		if valik1 == "ls":
+			printlist('i')
+
+		if valik1 =="add":
+			i1 = Inimene()
+			i1.nimi_set(raw_input("Nimi: "))
+			i1.save()
+
+		if valik1 == "del":
+			valik2 = int(raw_input("Sisesta ID: "))
+			i2 = Inimene()
+			i2.load(valik2)
+			i2.remove()
+
+
+	elif valik == "k":
+		valik1 = raw_input("Valige, kas ls, add, del: ")
+
+		if valik1 == "ls":
+			printlist('k')
+
+		if valik1 =="add":
+			k1 = Kontakt()
+			k1.number_set(raw_input("Number: "))
+			k1.omanik_set(raw_input("Omanik: "))
+			k1.save()
+
+		if valik1 == "del":
+			valik2 = int(raw_input("Sisesta ID: "))
+			k2 = Kontakt()
+			k2.load(valik2)
+			k2.remove()
+	else: 
+		print exit()
