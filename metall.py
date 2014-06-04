@@ -18,11 +18,12 @@ class CreateMetall(DefinitionBase):
             return result
 
 
-        @soap(_returns=Integer)
+        @soap(String_returns=Integer)
         def density(self):
                 density = result[3]/(result[0]*result[1]*result[2])
                 return density
                 
+        @soap(String,_returns=Integer)        
         def cubage(self):
                 cubage = result[0]*result[1]*result[2]
                 return cubage
