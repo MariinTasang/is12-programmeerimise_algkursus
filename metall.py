@@ -19,13 +19,13 @@ class CreateMetall(DefinitionBase):
 
 
         @soap(_returns=Integer)
-        def calculate(self, type='cubage'):
-                if type == 'density':
-                        density = result[3]/(result[0]*result[1]*result[2])
-                        return density
-                elif type == 'cubage':
-                        cubage = result[0]*result[1]*result[2]
-                        return cubage
+        def density(self):
+                density = result[3]/(result[0]*result[1]*result[2])
+                return density
+                
+        def cubage(self):
+                cubage = result[0]*result[1]*result[2]
+                return cubage
 
 
 if __name__=='__main__':
